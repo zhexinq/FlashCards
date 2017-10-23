@@ -58,7 +58,6 @@ class DeckList extends Component {
 
 const styles = StyleSheet.create({
 	item: {
-		alignSelf: 'stretch',
 	    backgroundColor: white,
 	    borderRadius: Platform.OS === 'ios' ? 16 : 2,
 	    padding: 20,

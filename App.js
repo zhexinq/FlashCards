@@ -70,14 +70,22 @@ const MainNavigator = StackNavigator({
       headerTintColor: white,
       headerStyle: {
         backgroundColor: black,
-      }
+      },
+      headerBackTitle: null
     }
   },
   AddCard: {
     screen: AddCard 
   },
   Quiz: {
-    screen: Quiz
+    screen: Quiz,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: black,
+      },
+      headerTitle: 'Quiz',
+    }
   }
 })
 
