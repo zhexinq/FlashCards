@@ -39,9 +39,6 @@ class NewDeck extends Component {
 		const { decks } = this.props
 		const title = this.state.deckTitle
 
-		console.log('validation###')
-		console.log(decks)
-
 		if (!title || title.length === 0) {
 			alert('Deck title cannot be empty.')
 			return false
@@ -57,7 +54,7 @@ class NewDeck extends Component {
 
 
 		return (
-			<KeyboardAvoidingView style={styles.container}>
+			<KeyboardAvoidingView behavior='padding' style={styles.container}>
 				<Text style={styles.instruction}>
 					What is the title of your new deck?
 				</Text>

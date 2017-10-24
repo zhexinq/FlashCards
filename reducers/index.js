@@ -20,7 +20,7 @@ export default function decks (state = {}, action) {
 		case ADD_CARD_TO_DECK:
 			const { title, card } = action
 			const newState = Object.assign({}, state)
-			newState[state]['questions'].push(card)
+			newState[title].questions.push(card)
 			return newState 
 	}
 }

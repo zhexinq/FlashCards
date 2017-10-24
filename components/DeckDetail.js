@@ -16,13 +16,10 @@ class DeckDetail extends Component {
 		const { deckTitle } = this.props.navigation.state.params
 		const deck = this.props.decks[deckTitle]
 
-		console.log('Deck detail:')
-		console.log(deck)
-
 		return (
 			<View style={styles.container}>
 				<View style={[styles.section, {flex: 7}]}>
-					<Text style={{fontSize: 38, fontWeight: 'bold', marginBottom: 20}}>
+					<Text style={{fontSize: 38, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' }}>
 						{deck.title}
 					</Text>
 					<Text style={{fontSize: 20, color: gray}}>
@@ -30,7 +27,12 @@ class DeckDetail extends Component {
 					</Text>
 				</View>
 				<View style={[styles.section, {flex: 3}]}>
-					<TouchableOpacity style={styles.lightButton}>
+					<TouchableOpacity 
+						style={styles.lightButton}
+						onPress={() => this.props.navigation.navigate(
+							'AddCard',
+							{ deckTitle: deckTitle }
+						)}>
 						<Text style={{fontSize: 16}}>Add Card</Text>						
 					</TouchableOpacity>
 					<TouchableOpacity 

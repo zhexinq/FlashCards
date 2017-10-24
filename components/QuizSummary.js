@@ -8,7 +8,7 @@ export default function QuizSummary ({ score, scoreBase }) {
 		<View style={styles.container}>
 			<Grading 
 				mode='arcs'
-				score={score * 100.0 / scoreBase}
+				score={Math.round(score * 100.0 / scoreBase)}
 				activeColor={black}
 				defaultColor={black}
 				fontColor={black}
