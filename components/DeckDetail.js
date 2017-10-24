@@ -38,7 +38,9 @@ class DeckDetail extends Component {
 						onPress={() => this.props.navigation.navigate(
 							'Quiz',
 							{ deckTitle: deckTitle }
-						)}>
+						)}
+						disabled={deck.questions.length === 0}
+						>
 						<Text style={{color: white, fontSize: 16}}>Start Quiz</Text>						
 					</TouchableOpacity>
 				</View>
