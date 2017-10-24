@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity, Platform } from 'react-native
 import { connect } from 'react-redux'
 import FlipCard from 'react-native-flip-card'
 import { white, red, green } from '../utils/colors'
+import QuizSummary from './QuizSummary'
 
 class Quiz extends Component {
 	state = {
@@ -31,7 +32,7 @@ class Quiz extends Component {
 		const question = deck.questions[answered]
 
 		if (answered === total) {
-			return <Text>Score Summary</Text>
+			return <QuizSummary score={this.state.correct} scoreBase={total} />
 		}
 
 		return (
