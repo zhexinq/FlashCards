@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import Grading from 'react-native-grading'
 import { white, black } from '../utils/colors'
+import { clearLocalNotifictaion, setLocalNotification } from '../utils/helpers' 
 
 class QuizSummary extends Component {
 	state = {}
+
+	componentDitMount() {
+		clearLocalNotifictaion()
+			.then(setLocalNotification)
+	}
 
 	render() {
 		const { score, scoreBase, title, navigation, reset } = this.props

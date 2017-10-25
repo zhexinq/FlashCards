@@ -13,6 +13,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation'
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
 import { Constants } from 'expo'
 import { black, white } from './utils/colors'
+import { setLocalNotification } from './utils/helpers'
 
 function MyStatusBar ({backgroundColor, ...props}) {
   return (
@@ -104,6 +105,7 @@ export default class App extends React.Component {
         initDummyData()
       }
     })
+    setLocalNotification()
   }
 
   render() {
