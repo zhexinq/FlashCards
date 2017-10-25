@@ -32,6 +32,12 @@ class NewDeck extends Component {
 			this.setState({
 				deckTitle: ''
 			})
+			this.props.navigation.navigate(
+				'DeckDetail',
+				{
+					deckTitle: title
+				}
+			)
 		}
 	}
 
@@ -51,7 +57,6 @@ class NewDeck extends Component {
 	}
 
 	render() {
-
 
 		return (
 			<KeyboardAvoidingView behavior='padding' style={styles.container}>

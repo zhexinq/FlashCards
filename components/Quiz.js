@@ -22,6 +22,13 @@ class Quiz extends Component {
 		this.setState((state) => ({
 			answered: state.answered + 1
 		}))
+	}
+
+	reset = () => {
+		this.setState({
+			answered: 0,
+			correct: 0
+		})
 	}	
 
 	render() {
@@ -32,7 +39,12 @@ class Quiz extends Component {
 		const question = deck.questions[answered]
 
 		if (answered === total) {
-			return <QuizSummary score={this.state.correct} scoreBase={total} />
+			return <QuizSummary 
+						score={this.state.correct} 
+						scoreBase={total}
+						navigation={this.props.navigation}
+						title={deckTitle}
+						reset={this.reset} />
 		}
 
 		return (
